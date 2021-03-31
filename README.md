@@ -1,6 +1,6 @@
 # RPF-Packager
 
-A utility for automatically creating RPF files.
+A utility for automatically creating RPF files for Map Mods. This will not work for vehicle mods (yet)
 
 ## Contents
 
