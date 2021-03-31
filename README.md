@@ -15,6 +15,7 @@ You can create an exe from the source scripts with `npm run package`, though one
 
 ## Usage
 
+- Grab the latest release from <https://github.com/test137E29B/RPF-Packager/releases>
 - In the `input` folder, create a folder with the name you want your DLC Pack to have, for example `MYDLCPack`. This has to be unique as it'll be used as the DLC hashname etc.
 - In your newly created folder, place all the files you would normally place inside the `replacement.rpf`, such as `.ymap`, `.ytyp`, `.ydr` and so on.
 - Run `index.exe` to package your DLC Pack (You can create multiple folders and package multiple DLC Packs at once!)
