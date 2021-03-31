@@ -25,7 +25,6 @@ const call = (command: string) => execSync(command, { maxBuffer: 1024 * 20000000
   const isPackaged = __dirname.includes('snapshot');
   const directoryName = isPackaged ? dirname(process.execPath) : __dirname;
   makeDir(resolve(directoryName, 'input'));
-  const runtimeFolder = directoryName.split('\\').slice(-1).pop() ?? 'bin';
   const gtaVUtilExe = `"${resolve(directoryName, 'utils', 'GTAUtil.exe')}"`;
   const directories = getDirectories(resolve(directoryName, 'input'));
   console.info(`Creating Replacement RPF files from ${directories.length} directories...`);
@@ -46,7 +45,13 @@ const call = (command: string) => execSync(command, { maxBuffer: 1024 * 20000000
 
     // Package temp/files directory into replacement.rpf
     console.info('Creating replacement.rpf from /temp/files');
-    call(`${gtaVUtilExe} createarchive --input ./${runtimeFolder}/temp/files --output ./${runtimeFolder}/temp/x64 --name replacement`);
+    call(
+      `${gtaVUtilExe} createarchive --input "${resolve(directoryName, 'temp', 'files')}" --output "${resolve(
+        directoryName,
+        'temp',
+        'x64'
+      )}" --name replacement`
+    );
 
     // Delete temp/files directory
     console.info('Deleting /temp/files');
@@ -60,7 +65,7 @@ const call = (command: string) => execSync(command, { maxBuffer: 1024 * 20000000
     // Package temp into an RPF and move to output folder with filename of ${name}.rpf
     console.info(`Creating dlc.rpf for ${name} from /temp`);
     makeDir(resolve(directoryName, 'output', name));
-    call(`${gtaVUtilExe} createarchive --input ./${runtimeFolder}/temp --output ./${runtimeFolder}/output/${name} --name dlc`);
+    call(`${gtaVUtilExe} createarchive --input "${resolve(directoryName, 'temp')}" --output "${resolve(directoryName, 'output', name)}" --name dlc`);
 
     // Delete temp folder
     console.info('Deleting /temp');
