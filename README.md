@@ -25,9 +25,9 @@ These have not been tested with Base GTA V, but should be fine without affixing.
 
 ## Notes
 
-- `GTAVUtil.exe` is used here, and so sometimes may ask for your GTA V Installation Path.
-- After a GTA V Update, you should head to `RPF-Packager/utils` and open a command prompt, using the command `./GTAVUtil.exe buildcache`. This will ask for your GTA V path, and could take up to 30 minutes to create the cache of new GTA V Files. It's not really needed for this tool, but GTAVUtil has a lot of other cool features.
+- `GTAUtil.exe` is used here, and so sometimes may ask for your GTA V Installation Path.
+- After a GTA V Update, you should head to `RPF-Packager/utils` and open a command prompt, using the command `./GTAUtil.exe buildcache`. This will ask for your GTA V path, and could take up to 30 minutes to create the cache of new GTA V Files. It's not really needed for this tool, but GTAUtil has a lot of other cool features.
 
 ## Credits
 
-**GTAVUtil** - <https://github.com/indilo53/gtautil>
+**GTAUtil** - <https://github.com/indilo53/gtautil>
