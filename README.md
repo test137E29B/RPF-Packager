@@ -17,12 +17,14 @@ You can create an exe from the source scripts with `npm run package`, though one
 
 - Grab the latest release from <https://github.com/test137E29B/RPF-Packager/releases>
 - In the `input` folder, create a folder with the name you want your DLC Pack to have, for example `MYDLCPack`. This has to be unique as it'll be used as the DLC hashname etc.
-- In your newly created folder, place all the files you would normally place inside the `replacement.rpf`, such as `.ymap`, `.ytyp`, `.ydr` and so on.
-- Run `index.exe` to package your DLC Pack (You can create multiple folders and package multiple DLC Packs at once!)
+- In your newly created folder, create a folder called `interior` (or `int`). This is where you will place all your files for MLO Interiors. Do not place non-MLO files in here.
+- In your newly created folder, create a folder called `props`. This is where you will place all your files for regular maps (such as ymaps in the world). Do not place MLO interior files in here.
+- You will need a correctly generated _manifest file no matter which you are using, you can create this with CodeWalker.
+- Run `index.exe` to package your DLC Pack (You can create multiple folders and package multiple DLC Packs at once!). The Max size of this DLCPack is 4GB - you can package multiple packs together in a single DLCPack if you like!
 - In `output` you will find your folder with a `dlc.rpf` inside of it. The tool will have automatically generated all the files it needs, so you do not need to edit this rpf! :)
 
 You can use these DLC Packs in RageMP 1.1 without affixing, or RageMP 0.3 with affixing via RageMp's plugin, or manually.
-These have not been tested with Base GTA V, but should be fine without affixing.
+These have not been tested with Base GTA V or RageMP 0.3. For GTA V Story Mode you should be fine without affixing.
 
 ## Notes
 
