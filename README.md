@@ -33,4 +33,5 @@ These have not been tested with Base GTA V or RageMP 0.3. For GTA V Story Mode y
 
 ## Credits
 
-**GTAUtil** - <https://github.com/indilo53/gtautil>
+**GTAUtil** - <https://github.com/gizzdev/gtautil>
+
