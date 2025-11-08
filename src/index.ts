@@ -67,7 +67,8 @@ const call = (command: string) => execSync(command, { maxBuffer: 1024 * 20000000
         console.info(`Copying ${files.length} interior files to correct temporary directory...`);
         for (const { filePath, fileName } of files) {
           const fileType = fileName.split('.').pop()?.toLocaleLowerCase();
-          const isMetaFileType = fileName === '_manifest' || (fileType && ['ybn', 'ymap'].includes(fileType));
+          // TODO: verify if the file extension is always existing
+          const isMetaFileType = fileName === '_manifest' || fileName === '_manifest.ymf' || (fileType && ['ybn', 'ymap'].includes(fileType));
           const isPropsFileType = fileType && ['ydr', 'ytyp', 'ytd', 'ydd', 'yft'].includes(fileType);
           if (isMetaFileType) {
             // Copy to int_meta
@@ -84,7 +85,8 @@ const call = (command: string) => execSync(command, { maxBuffer: 1024 * 20000000
         console.info(`Copying ${files.length} prop files to correct temporary directory...`);
         for (const { filePath, fileName } of files) {
           const fileType = fileName.split('.').pop()?.toLocaleLowerCase();
-          const isMetaFileType = fileName === '_manifest' || (fileType && ['ybn', 'ymap'].includes(fileType));
+          // TODO: verify if the file extension is always existing
+          const isMetaFileType = fileName === '_manifest' || fileName === '_manifest.ymf' || (fileType && ['ybn', 'ymap'].includes(fileType));
           const isPropsFileType = fileType && ['ydr', 'ytyp', 'ytd', 'ydd', 'yft'].includes(fileType);
           if (isMetaFileType) {
             // Copy to map_meta
